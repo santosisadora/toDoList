@@ -1,0 +1,21 @@
+<a href="/tasks/create">Add new task</a>
+<!--table-->
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">Task</th>
+        <th scope="col">Notes</th>
+        <th scope="col"></th>
+    </tr>
+    </thead>
+    {{#each tasks}}
+    <tbody>
+
+    <tr class="table-primary">
+        <td>{{this.task}}</td>
+        <td>{{this.notes}}</td>
+        <td><a href="/tasks/edit/{{this._id}}" class="btn btn-info text-light">Edit</a></td>
+        <td><a href="/tasks/delete/{{this._id}}" class="btn btn-danger" onclick="return confirmDelete()">Delete</a></td>
+    </tbody>
+    {{/each}}
+</table>
