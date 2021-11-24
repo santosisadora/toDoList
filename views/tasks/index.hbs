@@ -1,4 +1,4 @@
-<a href="/tasks/create">Add new task</a>
+<a href="/tasks/create" class="btn btn-new-task" >Add new task</a>
 <!--table-->
 <table class="table">
     <thead>
@@ -11,7 +11,7 @@
     {{#each tasks}}
     <tbody>
 
-    <tr class="table-primary">
+    <tr class="table table-success table-striped">
         <td>{{this.task}}</td>
         <td>{{this.notes}}</td>
         <td><a href="/tasks/edit/{{this._id}}" class="btn btn-info text-light">Edit</a></td>

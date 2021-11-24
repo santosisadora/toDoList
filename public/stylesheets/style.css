@@ -7,3 +7,9 @@ a {
   color: #00B7FF;
 }
 
+.btn-new-task{
+  margin-top:3%;
+  margin-left:43%;
+  margin-right:25%;
+  background-color: seagreen;
+}
