@@ -54,3 +54,15 @@ img{
 .navbar{
   border-radius:30px;
 }
+
+.offset-3{
+  margin-top: 2%;
+  margin-left: 15%;
+  background-color: green;
+}
+
+.offset-4{
+  margin-top:2%;
+  margin-left:1%;
+  background-color: green;
+}
