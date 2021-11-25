@@ -16,7 +16,7 @@ router.get('/', function(req, res, next) {
 router.get('/about', function(req, res, next) {
   res.render('about', {
       title: 'About Developer',
-      content:'This is the content from /about, and this is editable in index.js',
+      content:'https://www.linkedin.com/in/isadora-santos-/',
       user: req.user
 
   });

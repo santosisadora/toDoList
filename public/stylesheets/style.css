@@ -1,10 +1,36 @@
 body {
   padding: 50px;
   font: 14px K2D, sans-serif;
+
+  background-image:linear-gradient(to right,#5DEF9F,#53EE98,#77F1AE,#78F1AF,#64EFA3);
+}
+
+.footer{
+  position:fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+  color:#53EE98;
+  text-align: center;
+  border-radius: 30px;
+}
+
+.nav-link{
+  color:white;
+  text-decoration: none;
 }
 
 a {
   color: #00B7FF;
+}
+
+img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+
 }
 
 .btn-new-task{
@@ -12,4 +38,19 @@ a {
   margin-left:43%;
   margin-right:25%;
   background-color: seagreen;
+}
+
+.me-3{
+  margin-top:3%;
+  margin-left:45%;
+  margin-right:25%;
+
+}
+
+.splash{
+  color:darkgreen;
+}
+
+.navbar{
+  border-radius:30px;
 }
