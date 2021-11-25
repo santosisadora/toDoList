@@ -1,7 +1,6 @@
 body {
   padding: 50px;
   font: 14px K2D, sans-serif;
-
   background-image:linear-gradient(to right,#5DEF9F,#53EE98,#77F1AE,#78F1AF,#64EFA3);
 }
 
@@ -40,11 +39,25 @@ img{
   background-color: seagreen;
 }
 
+.me-2{
+  margin-left: 1%;
+}
+
 .me-3{
   margin-top:3%;
   margin-left:45%;
   margin-right:25%;
+}
+.nav-link-1{
+  color:green;
+}
 
+.me-5{
+  margin-left:62%;
+  margin-right: 1%;
+}
+.me-6{
+margin-right: 5%;
 }
 
 .splash{
@@ -52,7 +65,7 @@ img{
 }
 
 .navbar{
-  border-radius:30px;
+  border-radius:10px;
 }
 
 .offset-3{

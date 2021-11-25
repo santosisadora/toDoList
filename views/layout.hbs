@@ -21,10 +21,11 @@
 
           <a class="btn btn-outline-success me-2" type="button" href="/">Home</a>
       <a class="btn btn-outline-success me-2" type="button" href="/about">About Developer</a>
+
       <ul class="navbar-nav ms-auto">
           {{#if user}}
               <li class="nav-item">
-                  <a class="nav-link" href="#"> Hi, {{user.username}}!</a>
+                  <a class="nav-link-1" href="#"> Hi, {{user.username}}!</a>
               </li>
               <li class="nav-item">
                   <a class="btn btn-outline-success me-2" href="/tasks">My tasks</a>
@@ -32,17 +33,15 @@
               <li class="nav-item">
                   <a class="btn btn-outline-success me-2" href="/logout">Logout</a>
               </li>
-
               {{else}}
-              <li class="nav-item">
-                  <a class="btn btn-outline-success me-2" type="button" href="/login">Login</a>
-              </li>
-              <li class="nav-item">
-                  <a class="btn btn-sm btn-outline-secondary" type="button" href="/register">Register</a>
-              </li>
-              {{/if}}
 
+              <a class="btn btn-outline-success me-6" type="button" href="/login">Login</a>
+              <a class="btn btn-outline-success me-6" type="button" href="/register">Register</a>
+
+
+              {{/if}}
       </ul>
+
   </nav>
 
     {{{body}}}
