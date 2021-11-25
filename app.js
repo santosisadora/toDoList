@@ -6,6 +6,8 @@ var logger = require('morgan');
 
 var app = express();
 
+const globals = require('./config/globals')
+
 //passport fot auth -> this needs to be configured before the controllers reference(because controllers will use it) - 3 steps
 const passport = require('passport')
 const session = require('express-session')
@@ -15,15 +17,55 @@ app.use(session({
     resave:true,
     saveUninitialized: false
 }))
+
 //2. enabling passport
 app.use(passport.initialize())
 app.use(passport.session())
+
 //3.link passport to user model using plm
 const User = require('./models/user')
 passport.use(User.createStrategy())
+
 //4.setting passport to read and write user info from session
 passport.serializeUser(User.serializeUser())
 passport.deserializeUser(User.deserializeUser())
+
+//passport for GitHub
+const gitHub = require('passport-github2').Strategy
+
+passport.use(new gitHub({
+    clientID: globals.gitHub.clientID,
+    clientSecret: globals.gitHub.clientSecret,
+    callbackURL: globals.gitHub.callbackURL
+},
+    async(accessToken, refreshToken, profile, callback)=>{
+    try{
+        //checking if the github user is registered in the database
+        const user = await User.findOne({oauthID:profile.id})
+
+        if(user){
+            return callback(null, user)
+        }
+        else{
+            //create new github user
+            const newUser = new User({
+                username: profile.username,
+                oauthProvider:'GitHub',
+                oauthId:profile.id
+            })
+            const savedUser = await newUser.Save()
+            callback(null,savedUser)
+        }
+    }
+    catch(err){
+        callback(err)
+
+    }
+    }
+    ))
+
+
+
 
 var indexRouter = require('./controllers/index');
 var usersRouter = require('./controllers/users');
@@ -48,7 +90,6 @@ app.use('/tasks', tasksRouter);
 
 //mongodb connection with mongoose
 const mongoose = require('mongoose')
-const globals = require('./config/globals')
 
 mongoose.connect(globals.db,{
   useNewUrlParser:true,

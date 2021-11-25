@@ -7,7 +7,9 @@ const plm = require('passport-local-mongoose')
 //define the schema for the tasks
 const userSchema = new mongoose.Schema({
         username:String,
-        password:String
+        password:String,
+        oauthProvider:String,
+        oauthId:String
 })
 //using passport-local-mongoose to extend the model so it can include user management and authentication
 userSchema.plugin(plm)
