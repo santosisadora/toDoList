@@ -1,5 +1,5 @@
 # toDoList
-toDo List App - Assignment 3 COMP2068
+toDo List App
 
 Link to live website : https://todoisa.herokuapp.com/
 
